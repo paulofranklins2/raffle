@@ -11,17 +11,14 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class RaffleGUI implements ActionListener {
-    private JFrame frame;
-    private JPanel panel;
-    private JLabel label;
-    private JTextField numRunsField;
-    private JButton runButton;
-    private JTable winnersTable;
-    private JTable namesTable;
-    private DefaultTableModel winnersModel;
-    private DefaultTableModel namesModel;
-    private List<String> winners = new ArrayList<>();
-    private GridBagConstraints gbc;
+    private final JFrame frame;
+    private final JPanel panel;
+    private final JTextField numRunsField;
+    private final JButton runButton;
+    private final JTable namesTable;
+    private final DefaultTableModel winnersModel;
+    private final List<String> winners = new ArrayList<>();
+    private final GridBagConstraints gridBagConstraints;
 
 
     public RaffleGUI() {
@@ -29,48 +26,48 @@ public class RaffleGUI implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel = new JPanel(new GridBagLayout());
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        gbc = new GridBagConstraints();
+        gridBagConstraints = new GridBagConstraints();
 
-        label = new JLabel("Enter the number of times to run the raffle:");
+        JLabel label = new JLabel("Enter the number of times to run the raffle:");
         label.setFont(new Font("Arial", Font.PLAIN, 14));
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.WEST;
-        gbc.insets = new Insets(0, 0, 10, 10);
-        panel.add(label, gbc);
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+        gridBagConstraints.insets = new Insets(0, 0, 10, 10);
+        panel.add(label, gridBagConstraints);
 
         numRunsField = new JTextField(10);
         numRunsField.setPreferredSize(new Dimension(100, 30));
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.EAST;
-        gbc.insets = new Insets(0, 0, 10, 10);
-        panel.add(numRunsField, gbc);
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = GridBagConstraints.EAST;
+        gridBagConstraints.insets = new Insets(0, 0, 10, 10);
+        panel.add(numRunsField, gridBagConstraints);
 
         runButton = new JButton("Run Raffle");
         runButton.setFont(new Font("Arial", Font.PLAIN, 14));
         runButton.addActionListener(this);
-        gbc.gridx = 2;
-        gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.EAST;
-        gbc.insets = new Insets(0, 0, 10, 0);
-        panel.add(runButton, gbc);
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = GridBagConstraints.EAST;
+        gridBagConstraints.insets = new Insets(0, 0, 10, 0);
+        panel.add(runButton, gridBagConstraints);
 
         winnersModel = new DefaultTableModel();
         winnersModel.addColumn("Raffle #");
         winnersModel.addColumn("Winner");
 
-        winnersTable = new JTable(winnersModel);
+        JTable winnersTable = new JTable(winnersModel);
         JScrollPane winnersScrollPane = new JScrollPane(winnersTable);
         winnersScrollPane.setPreferredSize(new Dimension(400, 300));
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        gbc.gridwidth = 3;
-        gbc.fill = GridBagConstraints.BOTH;
-        gbc.insets = new Insets(0, 0, 10, 0);
-        panel.add(winnersScrollPane, gbc);
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new Insets(0, 0, 10, 0);
+        panel.add(winnersScrollPane, gridBagConstraints);
 
-        namesModel = new DefaultTableModel();
+        DefaultTableModel namesModel = new DefaultTableModel();
         namesModel.addColumn("Name");
         namesModel.addColumn("Number of Tickets");
 
@@ -113,11 +110,11 @@ public class RaffleGUI implements ActionListener {
 
         JScrollPane namesScrollPane = new JScrollPane(namesTable);
         namesScrollPane.setPreferredSize(new Dimension(400, 300));
-        gbc.gridx = 0;
-        gbc.gridy = 2;
-        gbc.gridwidth = 3;
-        gbc.fill = GridBagConstraints.BOTH;
-        panel.add(namesScrollPane, gbc);
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
+        panel.add(namesScrollPane, gridBagConstraints);
 
         frame.getContentPane().add(panel);
         frame.pack();
@@ -195,21 +192,21 @@ public class RaffleGUI implements ActionListener {
             JScrollPane namesScrollPane = new JScrollPane(namesTable);
             namesPanel.add(namesScrollPane, BorderLayout.CENTER);
 
-            gbc.gridx = 0;
-            gbc.gridy = 3;
-            gbc.gridwidth = 3;
-            gbc.fill = GridBagConstraints.BOTH;
-            gbc.anchor = GridBagConstraints.LINE_START;
-            gbc.weightx = 1.0;
-            gbc.weighty = 1.0;
-            panel.add(namesPanel, gbc);
+            gridBagConstraints.gridx = 0;
+            gridBagConstraints.gridy = 3;
+            gridBagConstraints.gridwidth = 3;
+            gridBagConstraints.fill = GridBagConstraints.BOTH;
+            gridBagConstraints.anchor = GridBagConstraints.LINE_START;
+            gridBagConstraints.weightx = 1.0;
+            gridBagConstraints.weighty = 1.0;
+            panel.add(namesPanel, gridBagConstraints);
 
             namesScrollPane.setPreferredSize(new Dimension(400, 300));
-            gbc.gridx = 0;
-            gbc.gridy = 2;
-            gbc.gridwidth = 3;
-            gbc.fill = GridBagConstraints.BOTH;
-            panel.add(namesScrollPane, gbc);
+            gridBagConstraints.gridx = 0;
+            gridBagConstraints.gridy = 2;
+            gridBagConstraints.gridwidth = 3;
+            gridBagConstraints.fill = GridBagConstraints.BOTH;
+            panel.add(namesScrollPane, gridBagConstraints);
 
             // Run the raffle for the specified number of times
             Random random = new Random();
