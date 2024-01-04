@@ -1,6 +1,3 @@
-Certainly! Below is a complete README.md template for your Raffle GUI Java project. Feel free to use it as is or modify it to better suit your needs:
-
-```markdown
 # Raffle GUI
 
 Raffle GUI is a Java Swing application that provides a graphical interface for running a raffle. It allows users to set the number of raffle runs, manages participants, and displays the results in an organized manner.
@@ -42,7 +39,6 @@ Raffle GUI is a Java Swing application that provides a graphical interface for r
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
-
 ---
 
 **Note:** Ensure that Java and a compatible IDE are installed on your system before running the application.
@@ -50,4 +46,4 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 **Disclaimer:** This project is developed for educational and recreational purposes.
 ```
 
-Feel free to customize the content, add more sections, or provide specific instructions based on your project's needs.
+Please copy and use the above README.md content for your project.
