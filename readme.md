@@ -8,7 +8,6 @@ Raffle GUI is a Java Swing application that provides a graphical interface for r
 - [Features](#features)
 - [File Structure](#file-structure)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
